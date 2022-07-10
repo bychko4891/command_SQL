@@ -1,12 +1,15 @@
+--// В этом файле примеры комманд выборки результатов, а так же сортировке по уже созданной базе данных my_base
+
 SELECT * FROM `orders` WHERE users_name LIKE 'us%';
+--// использование ключа LIKE можно осуществлять поиск в колонке таблицы по части данных
 
 SELECT users_name,users_lastname FROM `orders`WHERE users_name LIKE 'us%';
-
 SELECT users_name,users_lastname FROM `orders`WHERE users_name LIKE 'us%' LIMIT 2;
+--// Применение ключа  LIMIT для ограничения вывода результата выборки
 
 SELECT * FROM `article` ORDER BY price ASC;
-
 SELECT * FROM `article` ORDER BY price DESC LIMIT 4;
+--// Применение ORDER BY для сортировки по возростанию (ASC) или убыванию (DESC) или по алфавиту
 
 SELECT COUNT(*) FROM  `article`;
 
