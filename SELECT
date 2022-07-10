@@ -1,0 +1,25 @@
+SELECT * FROM `orders` WHERE users_name LIKE 'us%';
+
+SELECT users_name,users_lastname FROM `orders`WHERE users_name LIKE 'us%';
+
+SELECT users_name,users_lastname FROM `orders`WHERE users_name LIKE 'us%' LIMIT 2;
+
+SELECT * FROM `article` ORDER BY price ASC;
+
+SELECT * FROM `article` ORDER BY price DESC LIMIT 4;
+
+SELECT COUNT(*) FROM  `article`;
+
+SELECT COUNT(*),id_article FROM `orders` GROUP BY id_article
+SELECT id_article,COUNT(*) AS k_vo_zakazov FROM `orders` GROUP BY id_article
+SELECT id_article,COUNT(*) AS k_vo_zakazov FROM `orders` GROUP BY id_article HAVING COUNT(*) >= 2;
+
+SELECT name,MIN(price) FROM article GROUP BY name HAVING MIN(price) >= 1004;
+SELECT name,MIN(price) FROM article GROUP BY name HAVING MIN(price) >= 1004 ORDER BY price DESC;
+SELECT name,MIN(price) AS priceMin FROM article GROUP BY name HAVING MIN(price) >= 1004 ORDER BY priceMin DESC
+
+SELECT * FROM `article` WHERE id IN ( SELECT id_article FROM orders);
+
+SELECT * FROM `article` 
+JOIN `orders`
+ON article.id = orders.id_article
