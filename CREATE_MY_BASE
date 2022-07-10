@@ -1,3 +1,8 @@
+--// Создание базы данных 
+CREATE DATABASE my_base
+
+--// Создание двух таблиц с primary key и foreign key
+
 CREATE TABLE article (
 id int(8) NOT NULL  AUTO_INCREMENT,
 name CHAR(255),
@@ -17,3 +22,31 @@ PRIMARY KEY (id),
 FOREIGN KEY (id_article)
 REFERENCES article(id)
 );
+
+
+ALTER  TABLE orders MODIFY users_phone CHAR(13);
+--// Использование запроса  ALTER для модификации столбца таблицы  "orders"  из int(50) на CHAR(13);
+-------------------------------------------------------------------------------------------------------------------------------
+--// Далее идет наполнение данными самих таблиц для отработки запроса  SELECT 
+INSERT INTO article (price, name, description) VALUE (1000, 'Tovar_1', 'njvdkjvndjkvndjvndjvnjdfk vdfnvndjnvjdfv vdfndjvnkjdf'); 
+INSERT INTO article (price, name, description) VALUE (1001, 'Tovar_8', 'njvdkjvndjkvndjvndjvnjdfk vdfnvndjnvjdfv vdfndjvnkjdf'); 
+INSERT INTO article (price, name, description) VALUE (1002, 'Tovar_2', 'njvdkjvndjkvndjvndjvnjdfk vdfnvndjnvjdfv vdfndjvnkjdf'); 
+INSERT INTO article (price, name, description) VALUE (1003, 'Tovar_3', 'njvdkjvndjkvndjvndjvnjdfk vdfnvndjnvjdfv vdfndjvnkjdf'); 
+INSERT INTO article (price, name, description) VALUE (1004, 'Tovar_4', 'njvdkjvndjkvndjvndjvnjdfk vdfnvndjnvjdfv vdfndjvnkjdf'); 
+INSERT INTO article (price, name, description) VALUE (1005, 'Tovar_5', 'njvdkjvndjkvndjvndjvnjdfk vdfnvndjnvjdfv vdfndjvnkjdf'); 
+INSERT INTO article (price, name, description) VALUE (1006, 'Tovar_6', 'njvdkjvndjkvndjvndjvnjdfk vdfnvndjnvjdfv vdfndjvnkjdf'); 
+INSERT INTO article (price, name, description) VALUE (1007, 'Tovar_7', 'njvdkjvndjkvndjvndjvnjdfk vdfnvndjnvjdfv vdfndjvnkjdf'); 
+INSERT INTO article (price, name, description) VALUE (2007, 'qwerty', 'njvdkjvndjkvndjvndjvnjdfk vdfnvndjnvjdfv vdfndjvnkjdf'); 
+
+INSERT INTO orders (id_article, users_name, users_lastname, users_phone, date_orders) VALUE ('2', 'user_1', 'user_last_1', '+380938888878', '1934-01-06'); 
+INSERT INTO orders (id_article, users_name, users_lastname, users_phone, date_orders) VALUE ('2', 'user_2', 'user_last_2', '+380688888889', '1234-02-06'); 
+INSERT INTO orders (id_article, users_name, users_lastname, users_phone, date_orders) VALUE ('3', 'user_3', 'user_last_3', '+380988888855', '1234-06-16'); 
+INSERT INTO orders (id_article, users_name, users_lastname, users_phone, date_orders) VALUE ('4', 'user_4', 'user_last_4', '+380638888810', '1834-12-06');
+INSERT INTO orders (id_article, users_name, users_lastname, users_phone, date_orders) VALUE ('5', 'user_5', 'user_last_5', '+380678888888', '1234-03-26');
+INSERT INTO orders (id_article, users_name, users_lastname, users_phone, date_orders) VALUE ('5', 'user_6', 'user_last_6', '+380688888823', '1234-06-06');
+INSERT INTO orders (id_article, users_name, users_lastname, users_phone, date_orders) VALUE ('7', 'user_7', 'user_last_7', '+380688888811', '2234-12-11');
+INSERT INTO orders (id_article, users_name, users_lastname, users_phone, date_orders) VALUE ('9', 'user_6', 'user_last_6', '+380688888823', '1234-06-06');
+INSERT INTO orders (id_article, users_name, users_lastname, users_phone, date_orders) VALUE (1, 'user_7', 'user_last_7', '+380688888811', '2234-12-11');
+
+INSERT INTO orders (id_article, users_name, users_lastname,users_phone, date_orders) VALUE (8,'Vasia', 'gwerty', '+380688522323', '2022-08-22');
+INSERT INTO orders (users_name, users_lastname,users_phone, date_orders) VALUE ('Marysia', 'gwerty', '+380688524423', '2022-08-12');
