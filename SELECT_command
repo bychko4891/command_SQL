@@ -11,18 +11,19 @@ SELECT * FROM `article` ORDER BY price ASC;
 SELECT * FROM `article` ORDER BY price DESC LIMIT 4;
 --// Применение ORDER BY для сортировки по возростанию (ASC) или убыванию (DESC) или по алфавиту
 
-SELECT COUNT(*) FROM  `article`;
+*/--// Запросы агригации
 
+SELECT COUNT(*) FROM  `article`; 
+--// подсчет строк в таблице `article`
 SELECT COUNT(*),id_article FROM `orders` GROUP BY id_article
-SELECT id_article,COUNT(*) AS k_vo_zakazov FROM `orders` GROUP BY id_article
-SELECT id_article,COUNT(*) AS k_vo_zakazov FROM `orders` GROUP BY id_article HAVING COUNT(*) >= 2;
-
 SELECT name,MIN(price) FROM article GROUP BY name HAVING MIN(price) >= 1004;
 SELECT name,MIN(price) FROM article GROUP BY name HAVING MIN(price) >= 1004 ORDER BY price DESC;
 SELECT name,MIN(price) AS priceMin FROM article GROUP BY name HAVING MIN(price) >= 1004 ORDER BY priceMin DESC
+*/
 
 SELECT * FROM `article` WHERE id IN ( SELECT id_article FROM orders);
-
+SELECT id_article,COUNT(*) AS k_vo_zakazov FROM `orders` GROUP BY id_article
+SELECT id_article,COUNT(*) AS k_vo_zakazov FROM `orders` GROUP BY id_article HAVING COUNT(*) >= 2;
 SELECT * FROM `article` 
 JOIN `orders`
 ON article.id = orders.id_article
