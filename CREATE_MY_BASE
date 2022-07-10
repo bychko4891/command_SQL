@@ -1,1 +1,19 @@
+CREATE TABLE article (
+id int(8) NOT NULL  AUTO_INCREMENT,
+name CHAR(255),
+price FLOAT(8,2)  NOT NULL,
+description VARCHAR(255),
+PRIMARY KEY (id)
+);
 
+CREATE TABLE orders(
+id int(8) NOT NULL  AUTO_INCREMENT,
+id_article int(8),
+users_name CHAR(50),
+users_lastname CHAR(50),
+users_phone int(50) NOT NULL,
+date_orders DATE,
+PRIMARY KEY (id),
+FOREIGN KEY (id_article)
+REFERENCES article(id)
+);
